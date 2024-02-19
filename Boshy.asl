@@ -83,11 +83,11 @@ startup
 
 reset
 {
-    if (settings["option34"])  //Reset when pause
-        return (current.frameGame==20);
+    if (settings["option34"]&&current.frameGame==20)  //Reset when pause
+        return true;
 
-    if (settings["option35"]) //Reset when pressed F2
-        return (current.frameGame==1);
+    if (settings["option35"]&&current.frameGame==1) //Reset when pressed F2
+        return true;
 }
 
 start
@@ -454,16 +454,16 @@ split
 
     if (!(current.completionWorld4)&&settings["option11"]&&current.frameGame==11) //World 4 with single screens
     {
-        current.index = 0;
 
-        if ((current.index==0)&&(current.y3<500)&&(current.y3>485)&&(current.x>635)) {
+        if ((current.index==0)&&(current.y3<500)&&(current.y3>485)&&(current.x3>635)) {
             current.index++;
             return true;
         }
-        if ((current.index==1)&&(current.y3<500)&&(current.y3>485)&&(current.x<460)) {
+        if ((current.index==1)&&(current.y3<500)&&(current.y3>485)&&(current.x3<460)) {
             current.index=0;
             return true;
         }
+
     }
 
 
