@@ -76,8 +76,9 @@ startup
 
     settings.Add("option34", false, "Reset timer when you pressed ESC");
     settings.Add("option35", false, "Reset timer when you pressed F2");
-    settings.Add("option36", false, "Turn on timer when you are in any world except Tutorial");
+    settings.Add("option36", false, "Turn on timer when you are in any world except Tutorial (it works when you choose worlds in options)");
     settings.Add("option37", false, "Boss Rush mode (Beta)");
+    settings.Add("option38", false, "Start timer when you in tutorial (it works without other options)");
 
 }
 
@@ -121,7 +122,7 @@ start
     current.completionBoss11 = false;
 
 
-    if ((settings["option1"] || settings["option2"]) && current.frameGame==36) //Start timer when launched Tutorial 
+    if ((settings["option1"] || settings["option2"] || settings["option38"]) && current.frameGame==36) //Start timer when launched Tutorial 
         return true;
 
 
@@ -189,7 +190,6 @@ start
     
         if ( settings["option33"] && (current.frameGame==38||current.frameGame==46) ) //Start timer when launched Final Path or Solgryn
             return true;
-
     }    
 }
 
@@ -249,7 +249,7 @@ split
             current.index++;
             return true;
         }
-        if ((current.index==12)&&(current.x0>445)&&(current.x0<650)&&(current.y0<500)&&(current.y0>490)) {
+        if ((current.index==12)&&(current.x0>445)&&(current.x0<660)&&(current.y0<500)&&(current.y0>480)) {
             current.index++;
             return true;
         }
@@ -330,7 +330,7 @@ split
             current.index++;
             return true;
         }
-        if ((current.index==10)&&(current.x1>3210)&&(current.x1<3230)&&(current.y1<1380)&&(current.y1>1265)) {
+        if ((current.index==10)&&(current.x1>3210)&&(current.x1<3250)&&(current.y1<1380)&&(current.y1>1265)) {
             current.index++;
             return true;
         }
@@ -354,15 +354,15 @@ split
             current.index++;
             return true;
         }
-        if ((current.index==16)&&(current.x1>6515)&&(current.x1<6605)&&(current.y1<1460)&&(current.y1>1450)) {
+        if ((current.index==16)&&(current.x1>6510)&&(current.x1<6610)&&(current.y1<1460)&&(current.y1>1440)) {
             current.index++;
             return true;
         }
-        if ((current.index==17)&&(current.x1>7050)&&(current.x1<7060)) {
+        if ((current.index==17)&&(current.x1>7050)&&(current.x1<7070)) {
             current.index++;
             return true;
         }
-        if ((current.index==18)&&(current.x1>7020)&&(current.x1<7030)&&(current.y1<1520)&&(current.y1>1450)) {
+        if ((current.index==18)&&(current.x1>7010)&&(current.x1<7030)&&(current.y1<1520)&&(current.y1>1450)) {
             current.index++;
             return true;
         }
